@@ -7,7 +7,7 @@
 | Data | Purpose | Storage |
 |------|---------|---------|
 | Email address | Account authentication (OTP login) | Supabase Auth |
-| PayPal API credentials | Payment processing | Encrypted on device + encrypted in cloud DB |
+| PayPal API credentials | Payment processing | Encrypted on device only (secrets never leave the device) |
 | Transaction records | Order history and refunds | Supabase PostgreSQL |
 | Device model & OS version | Error diagnostics | Supabase PostgreSQL |
 | App screenshots (on error only) | Debugging | Supabase Storage |
@@ -36,9 +36,8 @@ This app integrates with the following third-party services:
 
 ## Data Security
 
-- All credentials are encrypted at rest using AES-256-GCM
+- API secrets stored only on device, never uploaded to cloud
 - Local storage uses Android EncryptedSharedPreferences with hardware-backed keystore
-- Cloud-stored credentials are encrypted before transmission
 - Release builds strip all debug logging
 
 ## Data Retention
