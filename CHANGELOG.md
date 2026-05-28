@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-05-28
+
+### Added
+- **BOPIS (Buy Online, Pickup In-Store)** — Full integration with PayPal `PICKUP_IN_STORE` shipping type and `SET_PROVIDED_ADDRESS` preference for Seller Protection
+- **Multi-store management** — Add, edit, delete multiple pickup store locations in Settings; dropdown selector with address detail card
+- **Supabase RLS (Row Level Security)** — Per-merchant data isolation; each user only sees their own transactions and credentials
+- **JWT auto-refresh** — `alwaysAutoRefresh` + `autoLoadFromStorage` prevent silent auth failures after 1-hour token expiry
+- **QR pending navigation guard** — Confirmation dialog when leaving payment screen with an active QR order (History, Settings, Cancel)
+- **USER_GUIDE.md** — Comprehensive feature guide covering all 12 modules
+
+### Changed
+- **Products moved to local storage** — Product list stored in encrypted local prefs instead of Supabase; cleared on logout/re-auth
+- **Merchant Name consolidated into Store Name** — Removed separate Merchant Name field; store name used across app as display name
+- **Settings reorganization** — Store Locations below Authorization; Lookup & Refund and QR Logo merged into Business Tools section
+- **saveTransaction now includes auth_user_id** — Required for RLS per-merchant isolation
+
+### Fixed
+- Navigation to History/Settings while QR payment pending no longer silently abandons orders
+- Duplicate var declarations in PaymentScreen resolved
+
 ## [1.2.1] - 2026-05-13
 
 ### Added

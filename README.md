@@ -20,7 +20,9 @@ Customers scan the QR code with their phone, pay through PayPal, and the merchan
 - **Order Lookup** — Search transactions by order ID or pickup code
 - **Error Logging** — Automatic error capture with debug IDs and screenshots to cloud
 - **Auto Update** — In-app update mechanism with version control
-- **Security** — Encrypted local storage (AES-256), credential encryption, ProGuard obfuscation
+- **BOPIS** — Buy Online, Pickup In-Store with PayPal Seller Protection (`PICKUP_IN_STORE`)
+- **Multi-Store Management** — Add and manage multiple pickup locations with address details
+- **Security** — Encrypted local storage (AES-256), Supabase RLS per-merchant isolation, credential encryption, ProGuard obfuscation
 
 ## Tech Stack
 
